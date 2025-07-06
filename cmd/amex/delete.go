@@ -76,8 +76,8 @@ func delete(ctx context.Context, api *amex.API, card amex.EligibleCard) error {
 		return nil
 	}
 
-	for _, virtualCard := range virtualCards {
-		fmt.Printf("Deleting %s... ", virtualCard.Name)
+	for i, virtualCard := range virtualCards {
+		fmt.Printf("(%d/%d) Deleting %s... ", i+1, len(virtualCards), virtualCard.Name)
 		err := api.DeleteVirtualCard(ctx, card.AccountToken, virtualCard.EncryptedVirtualCardNumber)
 		if err != nil {
 			fmt.Println("Failed")

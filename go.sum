@@ -26,6 +26,8 @@ github.com/saucesteals/fhttp v0.0.0-20240117034418-b4f835e6c226 h1:+z43MGKJMxP/3
 github.com/saucesteals/fhttp v0.0.0-20240117034418-b4f835e6c226/go.mod h1:ivJd/dPhiPWDoO8eyglVm7eKq2+F4SR5/E1gGItti9I=
 github.com/saucesteals/mimic v0.0.0-20250615121843-99ed549a285c h1:NL0gYteMWbOPjgZcT2qFGQ8O/prpvf2GPtjTgPV3kDM=
 github.com/saucesteals/mimic v0.0.0-20250615121843-99ed549a285c/go.mod h1:2/U/vpebnJHZ9D43weivEPHCZXdkKiB3CpVufOYOzS8=
+github.com/saucesteals/mimic v1.0.0 h1:sq3JZyjiidGS/xWilosC1ilAN5quWUkB06b1f3jjRmQ=
+github.com/saucesteals/mimic v1.0.0/go.mod h1:2/U/vpebnJHZ9D43weivEPHCZXdkKiB3CpVufOYOzS8=
 github.com/ysmood/fetchup v0.2.3 h1:ulX+SonA0Vma5zUFXtv52Kzip/xe7aj4vqT5AJwQ+ZQ=
 github.com/ysmood/fetchup v0.2.3/go.mod h1:xhibcRKziSvol0H1/pj33dnKrYyI2ebIvz5cOOkYGns=
 github.com/ysmood/goob v0.4.0 h1:HsxXhyLBeGzWXnqVKtmT9qM7EuVs/XOgkX7T6r1o1AQ=

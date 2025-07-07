@@ -11,7 +11,7 @@ require (
 	github.com/lmittmann/tint v1.1.2
 	github.com/mattn/go-colorable v0.1.14
 	github.com/saucesteals/fhttp v0.0.0-20240117034418-b4f835e6c226
-	github.com/saucesteals/mimic v0.0.0-20250615121843-99ed549a285c
+	github.com/saucesteals/mimic v1.0.0
 )
 
 require (

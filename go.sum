@@ -24,10 +24,14 @@ github.com/refraction-networking/utls v1.7.4-0.20250519154908-0557f61cb0b8 h1:hI
 github.com/refraction-networking/utls v1.7.4-0.20250519154908-0557f61cb0b8/go.mod h1:TUhh27RHMGtQvjQq+RyO11P6ZNQNBb3N0v7wsEjKAIQ=
 github.com/saucesteals/fhttp v0.0.0-20240117034418-b4f835e6c226 h1:+z43MGKJMxP/32rt7kb4zTJlQtTL8WMu2NAnu20l+Vk=
 github.com/saucesteals/fhttp v0.0.0-20240117034418-b4f835e6c226/go.mod h1:ivJd/dPhiPWDoO8eyglVm7eKq2+F4SR5/E1gGItti9I=
+github.com/saucesteals/fhttp v1.0.1 h1:6T6TTKmgr4kp3jfb2vLD2qyNPgKPmBL+88FI6tHXIBw=
+github.com/saucesteals/fhttp v1.0.1/go.mod h1:BJGqcPgb8qSthUIS2GrSCjclvOpJ7llCaURDDTQ1a7Y=
 github.com/saucesteals/mimic v0.0.0-20250615121843-99ed549a285c h1:NL0gYteMWbOPjgZcT2qFGQ8O/prpvf2GPtjTgPV3kDM=
 github.com/saucesteals/mimic v0.0.0-20250615121843-99ed549a285c/go.mod h1:2/U/vpebnJHZ9D43weivEPHCZXdkKiB3CpVufOYOzS8=
 github.com/saucesteals/mimic v1.0.0 h1:sq3JZyjiidGS/xWilosC1ilAN5quWUkB06b1f3jjRmQ=
 github.com/saucesteals/mimic v1.0.0/go.mod h1:2/U/vpebnJHZ9D43weivEPHCZXdkKiB3CpVufOYOzS8=
+github.com/saucesteals/mimic v1.0.1 h1:NefWMWkWsOsa8quKZFDZtJHXMMgtSiw5+LYnRAeAlKo=
+github.com/saucesteals/mimic v1.0.1/go.mod h1:6EQU+r5stg690lNZnStSrBvaMFqvfztGSgGGXecHXWQ=
 github.com/ysmood/fetchup v0.2.3 h1:ulX+SonA0Vma5zUFXtv52Kzip/xe7aj4vqT5AJwQ+ZQ=
 github.com/ysmood/fetchup v0.2.3/go.mod h1:xhibcRKziSvol0H1/pj33dnKrYyI2ebIvz5cOOkYGns=
 github.com/ysmood/goob v0.4.0 h1:HsxXhyLBeGzWXnqVKtmT9qM7EuVs/XOgkX7T6r1o1AQ=

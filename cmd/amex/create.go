@@ -78,7 +78,8 @@ func create(ctx context.Context, profile *Profile, api *amex.API, card amex.Elig
 				continue
 			}
 
-			return fmt.Errorf("create virtual card: %w", err)
+			log.Error("create virtual card", "error", err)
+			continue
 		}
 
 		log.Info(fmt.Sprintf("(%d/%d) Virtual card created", i+1, count), "card", vcc.VirtualCardNumber)

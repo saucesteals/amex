@@ -44,6 +44,7 @@ func create(ctx context.Context, profile *Profile, api *amex.API, card amex.Elig
 	}
 	defer writer.Close()
 
+	successCount := 0
 	var assessmentToken string
 	for i := 0; i < count; i++ {
 		vcc, err := api.CreateVirtualCard(ctx, assessmentToken, amex.CreateVirtualCardArgs{
@@ -82,13 +83,14 @@ func create(ctx context.Context, profile *Profile, api *amex.API, card amex.Elig
 			continue
 		}
 
+		successCount++
 		log.Info(fmt.Sprintf("(%d/%d) Virtual card created", i+1, count), "card", vcc.VirtualCardNumber)
 		if err := writer.Write(vcc); err != nil {
 			return fmt.Errorf("write card: %w", err)
 		}
 	}
 
-	log.Info("Created cards", "count", count, "path", writer.GetPath())
+	log.Info("Created cards", "count", successCount, "path", writer.GetPath())
 
 	return nil
 }

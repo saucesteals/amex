@@ -2,7 +2,7 @@ name: Build and Release
 
 on:
   push:
-    tags: [ 'v*' ]
+    tags: ["v*"]
 
 jobs:
   build:
@@ -15,41 +15,33 @@ jobs:
         exclude:
           - goos: windows
             goarch: arm64
-    
+
+    env:
+      OUTPUT_NAME: ${{ matrix.goos == 'windows' && 'amex.exe' || format('amex-{0}-{1}', matrix.goos, matrix.goarch) }}
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      with:
-        go-version: '1.24'
-    
-    - name: Get dependencies
-      run: go mod download
-    
-    - name: Build
-      env:
-        GOOS: ${{ matrix.goos }}
-        GOARCH: ${{ matrix.goarch }}
-      run: |
-        BINARY_NAME=amex
-        
-        OUTPUT_NAME="${BINARY_NAME}-${GOOS}-${GOARCH}"
-        if [ "$GOOS" = "windows" ]; then
-          OUTPUT_NAME="${BINARY_NAME}.exe"
-        fi
-        
-        go build -ldflags="-s -w" -o "$OUTPUT_NAME" ./cmd/amex
-        
-        echo "BINARY_NAME=$BINARY_NAME" >> $GITHUB_ENV
-        echo "OUTPUT_NAME=$OUTPUT_NAME" >> $GITHUB_ENV
-    
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.OUTPUT_NAME }}
-        path: ${{ env.OUTPUT_NAME }}
-        retention-days: 30
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+
+      - name: Get dependencies
+        run: go mod download
+
+      - name: Build
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+        run: go build -ldflags="-s -w" -o ${{ env.OUTPUT_NAME }} ./cmd/amex
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.OUTPUT_NAME }}
+          path: ${{ env.OUTPUT_NAME }}
+          retention-days: 30
 
   release:
     name: Create Release
@@ -58,17 +50,17 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     permissions:
       contents: write
-    
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Download all artifacts
-      uses: actions/download-artifact@v4
-      with:
-        path: ./artifacts
-    
-    - name: Create Release
-      uses: softprops/action-gh-release@v2
-      with:
-        files: ./artifacts/**/*
-        generate_release_notes: true 
+      - uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./artifacts/**/*
+          generate_release_notes: true

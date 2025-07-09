@@ -21,9 +21,9 @@ type BillingAccountVirtualCard struct {
 	LimitStartDate             string            `json:"limit_start_date"`
 	LimitEndDate               string            `json:"limit_end_date"`
 	DateCreated                string            `json:"date_created"`
-	CurrentAmount              int               `json:"current_amount"`
+	CurrentAmount              float64           `json:"current_amount"`
 	BillingCurrency            string            `json:"billing_currency"`
-	OriginalAmount             int               `json:"original_amount"`
+	OriginalAmount             float64           `json:"original_amount"`
 	CurrentUsageStatus         string            `json:"current_usage_status"`
 	UserDefinedFields          map[string]string `json:"user_defined_fields"`
 	AccountingFields           map[string]string `json:"accounting_fields"`

@@ -41,7 +41,7 @@ func NewCardWriter(profile *Profile, card amex.EligibleCard, prefix string) (*Ca
 	}
 
 	t := time.Now().Format("2006_01_02_15_04_05")
-	fileName := path.Join(dir, fmt.Sprintf("%s_%s.csv", cleanName(prefix), t))
+	fileName := path.Join(dir, fmt.Sprintf("%s_%s.csv", t, cleanName(prefix)))
 	f, err := os.OpenFile(fileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0600)
 	if err != nil {
 		return nil, err

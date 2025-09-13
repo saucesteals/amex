@@ -14,7 +14,8 @@ import (
 )
 
 var (
-	loginURL = "https://www.americanexpress.com/en-us/account/login?DestPage=https%3A%2F%2Fwww.americanexpress.com%2Fen-us%2Fbusiness%2Fvirtual-card%2Fmanage-cards"
+	loginURL    = "https://www.americanexpress.com/en-us/account/login?DestPage=https%3A%2F%2Fwww.americanexpress.com%2Fen-us%2Fbusiness%2Fvirtual-card%2Fmanage-cards"
+	homepageURL = "https://www.americanexpress.com/"
 )
 
 func (a *API) initBrowser() (*rod.Browser, error) {
@@ -81,6 +82,11 @@ func (a *API) Login(ctx context.Context) error {
 	}
 
 	page, err := stealth.Page(browser)
+	if err != nil {
+		return err
+	}
+
+	err = page.Navigate(homepageURL)
 	if err != nil {
 		return err
 	}
